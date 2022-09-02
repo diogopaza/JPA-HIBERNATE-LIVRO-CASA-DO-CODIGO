@@ -21,6 +21,6 @@ public class Acessorio {
 	private Long codigo;
 	private String descricao;	
 	@ManyToMany(mappedBy="acessorios")
-	private List<Veiculo2> veiculos = new ArrayList<Veiculo2>();; 
+	private List<Veiculo2> veiculos = new ArrayList<Veiculo2>();
 	
 }

@@ -1,8 +1,12 @@
 package br.com.diogo.models2;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,14 +24,15 @@ public class Proprietario2_2 {
 	@Id
 	@GeneratedValue
 	private Long codigo;
-	@Column(name="nome_proprietario", nullable=true)
-	private String nome;
-	@Column(name="telefone_proprietario", nullable=true)
-	private String telefone;
-	@Column(name="email_proprietario", nullable=true)
-	private String email;	
-	@OneToMany(mappedBy="proprietario2_2")
+	@Column(name = "nome_proprietario", nullable = true)
+	private String nome;	
+	//@ElementCollection	
+	//@Column(name = "numero_telefone", length = 20, nullable = false)
+	//private List<Telefone> telefone = new ArrayList<>();
+	@ElementCollection
+	private List<Telefone> telefone = new ArrayList<>();
+	@Column(name = "email_proprietario", nullable = true)
+	private String email;
+	@OneToMany(mappedBy = "proprietario2_2")
 	private List<Veiculo2> veiculos;
-	
-	
 }

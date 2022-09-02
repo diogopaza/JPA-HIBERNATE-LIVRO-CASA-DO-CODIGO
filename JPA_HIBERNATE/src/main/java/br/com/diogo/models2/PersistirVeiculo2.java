@@ -15,15 +15,20 @@ public class PersistirVeiculo2 {
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
 		
+		Telefone tel1 = new Telefone("45", "998513318", "50");
+		Telefone tel2 = new Telefone("45", "888888888", "60");
+		Telefone tel3 = new Telefone("47", "666665555", "50");
+		
 		Proprietario2_2 proprietario = new Proprietario2_2();
 		proprietario.setNome("Diogo Paza");
 		proprietario.setEmail("diogopaza@live.com");
-		proprietario.setTelefone("8889999");
+		proprietario.getTelefone().add(tel1);
+		proprietario.getTelefone().add(tel2);
 		
 		Proprietario2_2 proprietario2 = new Proprietario2_2();
 		proprietario2.setNome("Renan");
 		proprietario2.setEmail("reana@live.com");
-		proprietario2.setTelefone("999558822");
+		proprietario2.getTelefone().add(tel3);
 		
 		Acessorio alarme = new Acessorio();
 		alarme.setDescricao("Alarme");
@@ -31,6 +36,7 @@ public class PersistirVeiculo2 {
 		arCondicionado.setDescricao("Ar condicionado");
 		Acessorio bancosDeCouro = new Acessorio();
 		bancosDeCouro.setDescricao("Bancos de couro");
+		//proprietario.getTelefone().add(tel1);
 		
 		manager.persist(alarme);
 		manager.persist(arCondicionado);
@@ -48,10 +54,7 @@ public class PersistirVeiculo2 {
 		veiculo.setProprietario2_2(proprietario);
 		veiculo.setFabricante("VW");
 		veiculo.getAcessorios().add(bancosDeCouro);
-		veiculo.getAcessorios().add(arCondicionado);
-		
-		
-		
+		veiculo.getAcessorios().add(arCondicionado);		
 		
 		VeiculoId2 id2 = new VeiculoId2("Santos","MMNN");
 		Veiculo2 veiculo3 = new Veiculo2();
@@ -64,8 +67,7 @@ public class PersistirVeiculo2 {
 		veiculo3.setTipoCombustivel2(TipoCombustivel2.BICOMBUSTIVEl);
 		veiculo3.setDataCadastro(new Date());
 		veiculo3.getAcessorios().add(bancosDeCouro);
-		veiculo3.setProprietario2_2(proprietario);
-		
+		veiculo3.setProprietario2_2(proprietario);		
 		
 		VeiculoId2 id3 = new VeiculoId2("Sao Paulo","ppoooo");
 		Veiculo2 veiculo4 = new Veiculo2();
