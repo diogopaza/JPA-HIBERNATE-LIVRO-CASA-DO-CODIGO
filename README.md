@@ -15,3 +15,6 @@ orphanRemoval = true)<br />
 public List<Produto> getProdutos() {<br />
 return produtos;<br />
 }<br />
+  
+  <h4>Operações em lote</h4>
+  <p></p>
