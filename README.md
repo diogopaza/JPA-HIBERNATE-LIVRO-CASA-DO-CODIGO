@@ -10,8 +10,8 @@
 <p>Uma entidade pode ser removida com o método <em>remove do EntityManager</em>, porém existe algumas operações que apenas desfaz o vinculo entre duas ou mais entidaders, não excluindo o registro do banco de dados. Para configurar a remoção de orfâos, é necessário inlcuir o atribtuto <strong>orphanRemoval no mapemanto.</strong></p>
 <p>Ex:</p>
 
-@OneToMany(mappedBy = "categoria", cascade = CascadeType.PERSIST,
-orphanRemoval = true)
-public List<Produto> getProdutos() {
-return produtos;
-}
+@OneToMany(mappedBy = "categoria", cascade = CascadeType.PERSIST,<br />
+orphanRemoval = true)<br />
+public List<Produto> getProdutos() {<br />
+return produtos;<br />
+}<br />
