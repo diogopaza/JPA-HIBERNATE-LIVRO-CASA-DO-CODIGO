@@ -5,3 +5,13 @@
 
 <h4>Operações em cascata</h4>
 <p>Em diversas situações é necessário excluir, inserir os relacionamentos de forma automática. O JPA fornece um mecanismo para facilitar a persistência de entidades e seus relacionamentos transientes. Sempre que o método persist for chamado pode ser usado o recursos <strong>cascade</strong>. O <strong>CascadeType.Persist</strong> por exemplo quando adicionado no relacionamento faz com que todas as entidades relacionadas sejam persisitidas no banco de dados, dessa forma não é necessário o metódo <em>persist</em> em todas as entidades relacionadas.</p> A operação <strong>cascade = CascadeType.All</strong> é um atalho para que todas as operações <em>(PERSIST, REFRESH, REMOVE e DETACH)</em> devem ser em cascata.
+
+<h4>Exclusão de objetos órfãos</h4>
+<p>Uma entidade pode ser removida com o método <em>remove do EntityManager</em>, porém existe algumas operações que apenas desfaz o vinculo entre duas ou mais entidaders, não excluindo o registro do banco de dados. Para configurar a remoção de orfâos, é necessário inlcuir o atribtuto <strong>orphanRemoval no mapemanto.</strong></p>
+<p>Ex:</p>
+
+@OneToMany(mappedBy = "categoria", cascade = CascadeType.PERSIST,
+orphanRemoval = true)
+public List<Produto> getProdutos() {
+return produtos;
+}
