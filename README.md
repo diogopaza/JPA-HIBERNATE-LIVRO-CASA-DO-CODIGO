@@ -22,7 +22,7 @@ return produtos;<br />
 		.setParameter("ano", 2012); <br />
 		List<Veiculo2> veiculos = query.getResultList();<br /><br />
 
-    //percorrendo a lista obtida com o <em>getResultList()</em>
+    //percorrendo a lista obtida com o getResultList()
 		for (Object obj : veiculos) {<br />
 			Veiculo2 veiculo = (Veiculo2) obj;<br />
 			System.out.println("VEICULO == " + veiculo.getModelo() + " - " + veiculo.getAnoFabricacao());<br />
