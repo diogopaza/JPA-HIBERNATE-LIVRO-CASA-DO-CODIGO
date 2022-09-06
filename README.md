@@ -20,7 +20,7 @@ return produtos;<br />
   <p>A JPQL é a linguagem padrão de consulta do JPA, permite escrever consultas portáveis, que funcionam independente do banco de dados.</p>
   <p> 
 	  
-	   ```
+	   
 	  Query query = manager.createQuery("select v from Veiculo2 v where anoFabricacao = :ano")
 		.setParameter("ano", 2012); 
 		List<Veiculo2> veiculos = query.getResultList();<br />
@@ -31,7 +31,7 @@ return produtos;<br />
 			System.out.println("VEICULO == " + veiculo.getModelo() + " - " + veiculo.getAnoFabricacao());
 		}
 	  
-	   ```
+	   
 </p>
     
   <h6>Consultas tipadas</h6>
