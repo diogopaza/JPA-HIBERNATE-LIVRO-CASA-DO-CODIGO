@@ -16,5 +16,6 @@ public List<Produto> getProdutos() {<br />
 return produtos;<br />
 }<br />
   
-  <h4>Operações em lote</h4>
-  <p></p>
+  <h3>Java Persistence Query Language - JPQL</h3>
+  <p>A JPQL é a linguagem padrão de consulta do JPA, permite escrever consultas portáveis, que funcionam independente do banco de dados.</p>
+  
