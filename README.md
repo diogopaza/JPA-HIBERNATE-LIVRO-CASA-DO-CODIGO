@@ -47,3 +47,17 @@ return produtos;<br />
 	}  
   </p>
   
+  <h4>Paginação</h4>
+  <p>
+  	```
+  	TypedQuery<Veiculo2> query = manager.createQuery("from Veiculo2", Veiculo2.class);
+		query.setFirstResult(0);//indice inicial da paginação
+		query.setMaxResults(2);//total de resultdos para serem listados
+		List<Veiculo2> veiculos = query.getResultList();
+		for (Object obj : veiculos) {
+			Veiculo2 veiculo = (Veiculo2) obj;
+			System.out.println("VEICULO == " + veiculo.getModelo() + " - " + veiculo.getAnoFabricacao());
+		}
+  	```
+  </p>
+  
