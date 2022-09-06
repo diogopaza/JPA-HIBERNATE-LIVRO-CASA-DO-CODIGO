@@ -32,9 +32,9 @@ return produtos;<br />
   <h6>Consultas tipadas</h6>
   <p>
 	 // já retorna uma lista do tipo especificada na criação da query
-	  #Markdown
+
 	  ```
-	<br> TypedQuery<Veiculo> query = manager.createQuery("from Veiculo",
+	TypedQuery<Veiculo> query = manager.createQuery("from Veiculo",
 							Veiculo.class);
    	List<Veiculo> veiculos = query.getResultList();
 		for (Veiculo veiculo : veiculos) {
