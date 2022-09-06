@@ -18,4 +18,25 @@ return produtos;<br />
   
   <h3>Java Persistence Query Language - JPQL</h3>
   <p>A JPQL é a linguagem padrão de consulta do JPA, permite escrever consultas portáveis, que funcionam independente do banco de dados.</p>
+  <p> Query query = manager.createQuery("select v from Veiculo2 v where anoFabricacao = :ano") <br />
+		.setParameter("ano", 2012); <br />
+		List<Veiculo2> veiculos = query.getResultList();<br /><br />
+
+    //percorrendo a lista obtida com o <em>getResultList()</em>
+		for (Object obj : veiculos) {<br />
+			Veiculo2 veiculo = (Veiculo2) obj;<br />
+			System.out.println("VEICULO == " + veiculo.getModelo() + " - " + veiculo.getAnoFabricacao());<br />
+		}</p>
+    
+  <h6>Consultas tipadas</h6>
+  <p>
+    TypedQuery<Veiculo> query = manager.createQuery("from Veiculo",<br />
+Veiculo.class);<br />
+List<Veiculo> veiculos = query.getResultList();<br />
+for (Veiculo veiculo : veiculos) {<br />
+System.out.println(veiculo.getModelo() + " " + veiculo.getFabricante()<br />
++ ": " + veiculo.getAnoFabricacao());<br />
+}
+  
+  </p>
   
