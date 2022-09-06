@@ -23,9 +23,9 @@ return produtos;<br />
 		List<Veiculo2> veiculos = query.getResultList();<br /><br />
 
     //percorrendo a lista obtida com o getResultList()
-		for (Object obj : veiculos) {<br />
-			Veiculo2 veiculo = (Veiculo2) obj;<br />
-			System.out.println("VEICULO == " + veiculo.getModelo() + " - " + veiculo.getAnoFabricacao());<br />
+		for (Object obj : veiculos) {
+			Veiculo2 veiculo = (Veiculo2) obj;
+			System.out.println("VEICULO == " + veiculo.getModelo() + " - " + veiculo.getAnoFabricacao());
 		}</p>
     
   <h6>Consultas tipadas</h6>
