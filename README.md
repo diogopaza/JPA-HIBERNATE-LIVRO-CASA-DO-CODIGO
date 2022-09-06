@@ -30,13 +30,13 @@ return produtos;<br />
     
   <h6>Consultas tipadas</h6>
   <p>
-    TypedQuery<Veiculo> query = manager.createQuery("from Veiculo",<br />
-Veiculo.class);<br />
-List<Veiculo> veiculos = query.getResultList();<br />
-for (Veiculo veiculo : veiculos) {<br />
-System.out.println(veiculo.getModelo() + " " + veiculo.getFabricante()<br />
-+ ": " + veiculo.getAnoFabricacao());<br />
-}
+	TypedQuery<Veiculo> query = manager.createQuery("from Veiculo",<br />
+							Veiculo.class);<br />
+   	List<Veiculo> veiculos = query.getResultList();<br />
+		for (Veiculo veiculo : veiculos) {<br />
+		System.out.println(veiculo.getModelo() + " " + veiculo.getFabricante()<br />
+		+ ": " + veiculo.getAnoFabricacao());<br />
+	}
   
   </p>
   
