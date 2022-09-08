@@ -61,4 +61,17 @@ return produtos;<br />
 		}
   	
   </p>
+  <h4>Projeções</h4>
+  <p>
+  	Projeções é uma técnica muito útil para quando precisamos de apenas algumas poucas informações de entidades. 
+	
+	TypedQuery<String> query = manager.createQuery(
+		"select modelo from Veiculo", String.class);
+	List<String> modelos = query.getResultList();
+	for (String modelo : modelos) {
+		System.out.println(modelo);
+	}
+	
+  
+  </p>
   
