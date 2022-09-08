@@ -70,8 +70,20 @@ return produtos;<br />
 	List<String> modelos = query.getResultList();
 	for (String modelo : modelos) {
 		System.out.println(modelo);
-	}
-	
-  
+	}  
   </p>
+   <h4>Resultados complexos </h4>
+   <p>
+   Quando uma query projeta mais de uma propriedade ou expressão na cláusula
+select, o resultado da consulta é um List, ou seja, uma lista de vetores de objetos.<br>
+Exemplo:<br>
+``Java
+ TypedQuery<Object[]> query3 = manager.createQuery("select modelo, valor from Veiculo2", Object[].class);
+		List<Object[]> resultado = query3.getResultList();
+		for(Object[] o : resultado) {
+			String modelo = (String) o[0];
+			BigDecimal valor = (BigDecimal) o[1];
+			System.out.println(modelo + " - " + valor);
+		}``
+   </p>
   
