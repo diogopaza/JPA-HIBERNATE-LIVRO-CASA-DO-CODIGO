@@ -87,4 +87,20 @@ select, o resultado da consulta é um List, ou seja, uma lista de vetores de obj
 		}
 	   
    </p>
+   
+    <h4>Associações e joins </h4>
+    <p>Quando precisamos combinar resultados de mais de uma entidade, precisamos
+	usar join. Os joins da JPQL são equivalentes aos da SQL, com a diferença que, em
+	JPQL, trabalhamos com entidades, e não tabelas.
+	
+```java
+List<Proprietario2_2> proprietarios = manager.createQuery("select distinct p from Proprietario2_2 p "
+				+ " inner join p.veiculos v", Proprietario2_2.class).getResultList();
+		for(Proprietario2_2 p : proprietarios) {			
+			System.out.println("Proprietarios: " + p.getNome());
+		}
+
+```
+	
+</p>
   
