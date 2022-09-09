@@ -77,8 +77,8 @@ return produtos;<br />
    Quando uma query projeta mais de uma propriedade ou expressão na cláusula
 select, o resultado da consulta é um List, ou seja, uma lista de vetores de objetos.
 	   
-```
- TypedQuery<Object[]> query3 = manager.createQuery("select modelo, valor from Veiculo2", Object[].class);
+
+ ```TypedQuery<Object[]> query3 = manager.createQuery("select modelo, valor from Veiculo2", Object[].class);
 		List<Object[]> resultado = query3.getResultList();
 		for(Object[] o : resultado) {
 			String modelo = (String) o[0];
@@ -94,17 +94,15 @@ select, o resultado da consulta é um List, ou seja, uma lista de vetores de obj
    Quando precisamos combinar resultados de mais de uma entidade, precisamos
 	usar join. Os joins da JPQL são equivalentes aos da SQL, com a diferença que, em
 	JPQL, trabalhamos com entidades, e não tabelas.
+	 
 	
-```
 	List<Proprietario2_2> proprietarios = manager.createQuery("select distinct p from Proprietario2_2 p "
 				+ " inner join p.veiculos v", Proprietario2_2.class).getResultList();
 	for(Proprietario2_2 p : proprietarios) {			
 		System.out.println("Proprietarios: " + p.getNome());
 	}
-
-	 
-	 <strong>Importante notar o uso do operador <em>distinct</em>, que permite que apenas um objeto seja retornado. Como no nosso caso um proprietário
-	 possua mais de um veículo seu nome será mostrado apenas uma vez.</strong>
+	 <h5>Importante notar o uso do operador <em>distinct</em>, que permite que apenas um objeto seja retornado.
+		 Como neste exemplo caso um proprietário
+	 possua mais de um veículo seu nome será mostrado apenas uma vez.</h5>
 	
-</p>
-  
+	
