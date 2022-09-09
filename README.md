@@ -101,7 +101,8 @@ select, o resultado da consulta é um List, ou seja, uma lista de vetores de obj
 	for(Proprietario2_2 p : proprietarios) {			
 		System.out.println("Proprietarios: " + p.getNome());
 	}
-```
+
+	 
 	 <strong>Importante notar o uso do operador <em>distinct</em>, que permite que apenas um objeto seja retornado. Como no nosso caso um proprietário
 	 possua mais de um veículo seu nome será mostrado apenas uma vez.</strong>
 	
